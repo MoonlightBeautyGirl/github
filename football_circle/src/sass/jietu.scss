@@ -1,0 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.jieping{
+  width: 6.4rem;
+  height: 9rem;
+  display:none;
+  .container{
+    width: 6.4rem;
+    height: 4.75rem;
+    overflow:hidden;
+    img{
+      width: 6.4rem;
+      height: 4.75rem;
+    }
+  }
+  .btns{
+    width: 6.4rem;
+    height: 1.14rem;
+    border-bottom: 0.01rem solid #cacaca;
+    background: #fff;
+    .queding{
+      width: 2.25rem;
+      height: 0.58rem;
+      border: 0.01rem solid #0fc244;
+      color: #31ad4d;
+      font: 0.24rem/0.58rem "";
+      float: left;
+      margin: 0.28rem;
+      text-align: center;
+      border-radius: 0.05rem;
+    }
+    .fangqi{
+      width: 2.25rem;
+      height: 0.58rem;
+      border: 0.01rem solid #0fc244;
+      color: #31ad4d;
+      font: 0.24rem/0.58rem "";
+      float: right;
+      margin: 0.28rem;
+      text-align: center;
+      border-radius: 0.05rem;
+    }
+  }
+  .box-container{
+    width: 6.4rem;
+    height: 3rem;
+    background: #fff;
+    overflow: hidden;
+    #c1{
+      display: block;
+      margin: 0.35rem auto;
+      width: 1.48rem;
+      height: 1.48rem;
+    }
+    .tijiao{
+      width: 4.17rem;
+      height: 0.6rem;
+      background: #0cc440;
+      color: #fff;
+      font: 0.25rem/0.6rem "";
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 0.05rem;
+    }
+  }
+}

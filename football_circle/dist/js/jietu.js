@@ -1,0 +1,1 @@
+jq(function(){var t=jq(".img1")[0],e=document.getElementById("c1"),i=e.getContext("2d");jq(".container img").cropper({aspectRatio:1,preview:".img-preview",crop:function(c){var n=c.x,r=c.y,g=c.width,h=c.height;jq("#btn1").click(function(){i.clearRect(0,0,e.width,e.height),i.drawImage(t,n,r,g,h,0,0,e.width,e.height)})}})});

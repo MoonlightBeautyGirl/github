@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px">
+<head>
+	<meta charset="UTF-8">
+	<title>足球圈</title>
+	<script>
+		var dpr = window.devicePixelRatio;
+		document.write('<meta name="viewport" content="width=device-Width,initial-scale='+1/dpr+',user-scalable=no">');
+		var html = document.querySelector('html');
+		html.style.fontSize = html.clientWidth/640*100 + 'px';
+		window.addEventListener('resize',function(){
+			html.style.fontSize = html.clientWidth/640*100 + 'px';
+		})
+		var Rem = parseInt(document.getElementsByTagName('html')[0].style.fontSize);
+	console.log(Rem);
+	</script>
+
+	<link rel="stylesheet" href="css/cssresets.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="font/iconfont.css">
+	<!-- public 包含 header, footer, content整体 -->
+	<!-- <link rel="stylesheet" href="css/public.css"> -->
+	<!-- index_box  包含 index_box 内容-->
+	<!-- <link rel="stylesheet" href="css/index_box.css">
+	<link rel="stylesheet" href="css/fb_follow.css">
+	<link rel="stylesheet" href="css/user.css">
+	<link rel="stylesheet" href="css/search-bar.css">
+	<link rel="stylesheet" href="css/find.css"> -->
+	<link rel="stylesheet" href="css/cropper.css">
+	<!-- <link rel="stylesheet" href="css/jietu.css"> -->
+	<link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+	<!-- fy start 头部 -->
+	<header class="header">
+		<div class="header-btn" id="sideBarBtn">
+			<i class="iconfont">&#xe606;</i>
+		</div>
+		<div class="header-tab" id="headerTab">
+			<span class="tab-left checked" id="hotBtn">热点</span>
+			<span class="tab-right" id="folBtn">关注</span>
+		</div>
+		<div class="header-title" id="headerTitle"></div>
+	</header>
+	<!-- fy end 头部-->
+
+	<!-- 内容区 start-->
+	<div class="content">
+
+		<!-- lxy start 主页 -->
+		<div class="index-box" id="indexBox">
+
+			<!-- lxy start 热点 -->
+			<div class="hotspot index-page" id="hotSpot">
+
+				<!-- fy start 导航-->
+				<nav class="nav" id="topNav">
+					<span class="nav-left checked" id="fbLiveBtn">足球现场</span>
+					<span class="nav-center" id="fbLifeBtn">足球生活</span>
+					<span class="nav-right" id="fbGirlBtn">足球美女</span>
+				</nav>
+				<!-- fy end 导航-->
+
+				<!-- fy start footBallBox -->
+				<div class="fb-box" id="fbBox">
+
+					<!-- lxy start 足球现场 -->
+					<div class="item-box">
+						<div class="fb-live" id="fbLive">
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/01index_default_03.jpg" alt="">
+								</div>
+								<figcaption>
+									小丸子啊小丸子
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img"><img src="img/01index_default_03.jpg" alt=""></div>
+								<figcaption>
+									小丸子啊小丸子
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/01index_default_03.jpg" alt="">
+								</div>
+								<figcaption>
+									小丸子啊小丸子
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img"><img src="img/01index_default_03.jpg" alt=""></div>
+								<figcaption>
+									小丸子啊小丸子
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/01index_default_03.jpg" alt="">
+								</div>
+								<figcaption>
+									小丸子啊小丸子
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img"><img src="img/01index_default_03.jpg" alt=""></div>
+								<figcaption>
+									小丸子啊小丸子
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/01index_default_03.jpg" alt="">
+								</div>
+								<figcaption>
+									小丸子啊小丸子
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img"><img src="img/01index_default_03.jpg" alt=""></div>
+								<figcaption>
+									小丸子啊小丸子
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img"><img src="img/01index_default_03.jpg" alt=""></div>
+								<figcaption>
+									小丸子啊小丸子
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/01index_default_03.jpg" alt="">
+								</div>
+								<figcaption>
+									小丸子啊小丸子
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+					<!-- lxy end 足球现场-->
+
+					<!-- lxy start 足球生活 -->
+					<div class="item-box">
+						<div class="fb-life" id="fbLife">
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_03.jpg" alt="">
+								</div>
+								<figcaption>
+									徐云龙争顶
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_05.jpg" alt="">
+								</div>
+								<figcaption>
+									马季奇向裁判示意对手拉扯武磊进球后腿抽筋
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_03.jpg" alt="">
+								</div>
+								<figcaption>
+									徐云龙争顶
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_05.jpg" alt="">
+								</div>
+								<figcaption>
+									马季奇向裁判示意对手拉扯武磊进球后腿抽筋
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_03.jpg" alt="">
+								</div>
+								<figcaption>
+									徐云龙争顶
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_05.jpg" alt="">
+								</div>
+								<figcaption>
+									马季奇向裁判示意对手拉扯武磊进球后腿抽筋
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_03.jpg" alt="">
+								</div>
+								<figcaption>
+									徐云龙争顶
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_05.jpg" alt="">
+								</div>
+								<figcaption>
+									马季奇向裁判示意对手拉扯武磊进球后腿抽筋
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_03.jpg" alt="">
+								</div>
+								<figcaption>
+									徐云龙争顶
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_05.jpg" alt="">
+								</div>
+								<figcaption>
+									马季奇向裁判示意对手拉扯武磊进球后腿抽筋
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_03.jpg" alt="">
+								</div>
+								<figcaption>
+									徐云龙争顶
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/04index_waterfall_05.jpg" alt="">
+								</div>
+								<figcaption>
+									马季奇向裁判示意对手拉扯武磊进球后腿抽筋
+								</figcaption>
+							</figure>
+
+						</div>
+					</div>
+					<!-- lxy end 足球生活 -->
+
+					<!-- lxy start 足球美女 -->
+					<div class="item-box">
+						<div class="fb-girl" id="fbGirl">
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/05index_fav_02.jpg" alt="">
+								</div>
+								<figcaption>
+									美女
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/05index_fav_02.jpg" alt="">
+								</div>
+								<figcaption>
+									美女
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/05index_fav_02.jpg" alt="">
+								</div>
+								<figcaption>
+									美女
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/05index_fav_02.jpg" alt="">
+								</div>
+								<figcaption>
+									美女
+								</figcaption>
+							</figure>
+
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/05index_fav_02.jpg" alt="">
+								</div>
+								<figcaption>
+									美女
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/05index_fav_02.jpg" alt="">
+								</div>
+								<figcaption>
+									美女
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/05index_fav_02.jpg" alt="">
+								</div>
+								<figcaption>
+									美女
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/05index_fav_02.jpg" alt="">
+								</div>
+								<figcaption>
+									美女
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/05index_fav_02.jpg" alt="">
+								</div>
+								<figcaption>
+									美女
+								</figcaption>
+							</figure>
+							<figure class="fb_l_cont">
+								<div class="cont_img">
+									<img src="img/05index_fav_02.jpg" alt="">
+								</div>
+								<figcaption>
+									美女
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+					<!-- lxy end 足球美女-->
+				</div>
+				<!-- fy end footBallBox -->
+			</div>
+			<!-- lxy end 热点 -->
+
+			<!-- lxy start 关注 -->
+			<div class="follow index-page" id="follow">
+				<div class="fo_msg">
+					<div class="ms_head">
+						<div class="userpic">
+							<img src="img/07loginBox_03.jpg" alt="">
+						</div>
+						<div class="userinfo">
+							<p class="username">我叫小萌</p>
+							<p class="userdsc">我是小萌我怕谁！哈哈哈哈哈！</p>
+						</div>
+						<div class="ms_zan">
+							<span class="ms_num">382344</span>
+							<i class="iconfont">&#xe601;</i>
+						</div>
+					</div>
+					<figure class="msg_cont">
+						<div class="msg_pic">
+							<img src="img/05index_fav_02.jpg" alt="">
+						</div>
+						<figcaption>
+							小丸子啊小丸子
+						</figcaption>
+					</figure>
+				</div>
+				<div class="fo_msg">
+					<div class="ms_head">
+						<div class="userpic">
+							<img src="img/07loginBox_03.jpg" alt="">
+						</div>
+						<div class="userinfo">
+							<p class="username">我叫小萌</p>
+							<p class="userdsc">我是小萌我怕谁！哈哈哈哈哈！</p>
+						</div>
+						<div class="ms_zan">
+							<span class="ms_num">382344</span>
+							<i class="iconfont">&#xe601;</i>
+						</div>
+					</div>
+					<figure class="msg_cont">
+						<div class="msg_pic">
+							<img src="img/05index_fav_02.jpg" alt="">
+						</div>
+						<figcaption>
+							小丸子啊小丸子
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+			<!-- lxy end 关注 -->
+		</div>
+		<!-- lxy end 主页 -->
+
+		<!-- wj start 发现 -->
+		<div class="search-bar" id="searchBar">
+			<div class="search">
+				<input type="text" placeholder="请输入昵称" list="dl1">
+				<datalist id="dl1">
+	        <option value="项目1">
+	        <option value="项目2">
+	        <option value="项目3">
+    		</datalist>
+				<div class="sousuo">搜索</div>
+			</div>
+
+			<div class="ren">
+				<div class="username">
+					<div class="touxiang"></div>
+					<div class="wenzi">
+						<p class="name">我叫小萌</p>
+						<p class="qianming">我是小萌我怕谁!哈哈哈!!!</p>
+					</div>
+					<div class="guanzhu weiguanzhu">关注</div>
+				</div>
+				<div class="username">
+					<div class="touxiang"></div>
+					<div class="wenzi">
+						<p class="name">我叫小萌</p>
+						<p class="qianming">我是小萌我怕谁!哈哈哈!!!</p>
+					</div>
+					<div class="guanzhu weiguanzhu">关注</div>
+				</div>
+			</div>
+		</div>
+		<!-- wj end 发现 -->
+
+		<!-- wj start 我的 -->
+		<div class="my-box" id="myBox">
+
+			<!-- fy start 未登录界面 -->
+			<div class="my-unlog" id="myUnlog">
+				<div class="portrait">
+					<img src="img/un-login.jpg" alt="">
+				</div>
+				<p id="myLogin">点击登录</p>
+			</div>
+			<!-- fy end -->
+
+			<!-- wj start 个人中心 -->
+			<div class="user my-item" id="myUser">
+				<div class="username">
+					<img src="" alt=""  class="touxiang" id="touXiang"/>
+					<div class="wenzi">
+						<p class="name" id="myName">我叫小萌</p>
+						<p class="qianming">我是小萌我怕谁!哈哈哈!!!</p>
+					</div>
+				</div>
+				<div class="tab">
+					<div class="zhaopian active">照片（1）</div>
+					<div class="guanzhu">关注（3）</div>
+					<div class="fensi">粉丝（8）</div>
+				</div>
+				<div class="pics">
+					<img src="img/01index_default_05.jpg" alt="">
+					<img src="img/01index_default_05.jpg" alt="">
+					<img src="img/01index_default_05.jpg" alt="">
+					<img src="img/01index_default_05.jpg" alt="">
+					<img src="img/01index_default_05.jpg" alt="">
+					<img src="img/01index_default_05.jpg" alt="">
+				</div>
+			</div>
+			<!-- wj end 个人中心 -->
+			
+			<!-- wj start 截屏 -->
+			<div class="jieping my-item" id="myCut">
+				<div class="container">
+      		 		 <img src="img/picture.jpg" class="img1">
+				</div>
+				<div class="btns">
+					<div class="queding"  id="btn1">确定裁剪</div>
+					<div class="fangqi">放弃重来</div>
+				</div>
+				<div class="box-container">
+					<canvas id="c1"></canvas>
+					<div class="tijiao" id="cutSub">提交</div>
+				</div>
+    		</div>
+			<!-- wj end 截屏 -->
+		</div>
+		<!-- wj end 我的 -->
+	</div>
+	<!-- 内容区 end-->
+
+	<!-- fy start mask -->
+	<div class="mask" id="mask"></div>
+	<!-- fy end mask -->
+
+	<!-- fy start 侧边栏 -->
+	<div class="side-bar" id="sideBar">
+		<div class="user-info" id="userInfo">
+			<div class="portrait">
+				<img src="img/portrait.png" alt="" id="bysbd">
+			</div>
+			<p class="name" id="userName">小丸子</p>
+			<div class="sign">我是小萌我怕谁!哈哈哈!!!</div>
+		</div>
+		<div class="un-login" id="unLog">
+			<div class="portrait">
+				<img src="img/un-login.jpg" alt="">
+			</div>
+			<p>点击头像快速登录</p>
+		</div>
+		<nav>
+			<p id="sideLiveBtn" class="side-btn">足球现场</p>
+			<p id="sideLifeBtn" class="side-btn">足球生活</p>
+			<p id="sideGirlBtn" class="side-btn">足球美女</p>
+		</nav>
+	</div>
+	<!-- fy end 侧边栏 -->
+
+	<!-- fy start 登录 -->
+	<div class="login" id="login">
+		<div class="title-box">
+			<div class="title">登录</div>
+			<div class="log-close-btn" id="logClose">
+				<i class="iconfont">&#xe60c;</i>
+			</div>
+		</div>
+		<div class="login-box">
+			<form>
+				<input type="tel" placeholder="手机号" autofocus="autofoucus" id="logTel">
+				<input type="password" placeholder="密码" id="logPsw">
+			</form>
+			<span>还没有账号？点击此处立即<i id="gotoReg">注册</i></span>
+			<div class="log-submit-btn" id="logSbm">提交</div>
+		</div>
+	</div>
+	<!-- fy end 登录 -->
+
+	<!-- fy start 注册 -->
+	<div class="register" id="register">
+		<div class="title-box">
+			<span class="reg-close-btn" id="regClose">取消</span>
+			<span class="reg-submit-btn" id="regSub">确定</span>
+		</div>
+		<div class="reg-box">
+			<form>
+				<input type="tel" placeholder="手机号" id="regTel" autofocus="autofoucus">
+				<input type="password" placeholder="密码" id="regPsw">
+				<input type="text" placeholder="昵称" id="regName">
+			</form>
+		</div>
+	</div>
+	<!-- fy end 注册 -->
+
+	<!-- fy start 退出提示 -->
+	<div class="quit-tip" id="quitTip">
+		<span class="quit-close" id="quitClose">取消</span>
+		<span class="quit-sure" id="quitSure">确定</span>
+	</div>
+	<!-- fy end 退出提示 -->
+
+	<!-- fy start 尾部-->
+	<footer class="footer" id="footer">
+		<span class="index-btn checked" id="indexBtn">
+			<i class="iconfont">&#xe607;</i>
+			<i class="footer-text">首页</i>
+		</span>
+		<span class="find-btn" id="findBtn">
+			<i class="iconfont">&#xe604;</i>
+			<i class="footer-text">发现</i>
+		</span>
+		<span class="camera-btn">
+			<i class="iconfont">&#xe605;</i>
+		</span>
+		<span class="exit-btn" id="exitBtn">
+			<i class="iconfont">&#xe602;</i>
+			<i class="footer-text">退出</i>
+		</span>
+		<span class="my-btn" id="myBtn">
+			<i class="iconfont">&#xe603;</i>
+			<i class="footer-text">我的</i>
+		</span>
+	</footer>
+	<!-- fy end 尾部 -->
+</body>
+
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	jq = $.noConflict();
+</script>
+<script src="js/zepto.js"></script>
+<script src="js/touch.js"></script>
+<script src="js/event.js"></script>
+<script src="js/ajax.js"></script>
+<script src="js/fx_methods.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/tab.js"></script>
+<script src="js/log_reg.js"></script>
+<script src="js/test.js"></script>
+<script src="js/jietu.js"></script>
+<script src="js/cropper.js"></script>
+<script src="js/content_ajax.js"></script>
+</html>

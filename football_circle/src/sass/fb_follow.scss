@@ -1,0 +1,102 @@
+div,span,figure,figcaption,img{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+@mixin imgs{
+	width:100%;
+	display:block;
+	border:0;
+}
+$fl_h:0.46rem;
+.content{
+	background:#f1f1f1;
+}
+.follow{
+	width:100%;
+	height:100%;
+	display:none;
+	overflow:hidden;
+	margin-bottom:0.88rem;
+	.fo_msg{
+		width:100%;
+		background:#fff;
+		
+		overflow:hidden;
+		margin-bottom:0.1rem;
+		border-bottom:1px solid #e4e4e4;
+		.ms_head{
+			width:100%;
+			height:1.45rem;
+			padding:0.2rem 0.25rem 0.24rem 0.23rem;
+			overflow:hidden;
+			.userpic{
+				float:left;
+				width:0.95rem;
+				height:0.95rem;
+				border-radius:50%;
+				margin-right:0.19rem;
+				border:1px solid #a9a9a9;
+				overflow:hidden;
+				img{
+					height:100%;
+					@include imgs;
+				}
+			}
+			.userinfo{
+				float:left;
+				width:3.25rem;
+				.username{
+					width:100%;
+					height:$fl_h;
+					font-size:0.28rem;
+					color:#000;
+					line-height:0.46rem;
+				}
+				.userdsc{
+					width:100%;
+					height:$fl_h;
+					font-size:0.24rem;
+					color:#e9e9e9;
+					margin-top:0.04rem;
+					overflow:hidden;
+					white-space:nowrap;
+					text-overflow:ellipsis;
+				}
+			}
+			.ms_zan{
+				float:right;
+				width:1.5rem;
+				height:$fl_h;
+				line-height:$fl_h;
+				font-size:0.2rem;
+				text-align:right;
+				color:#c9c9c9;
+				.iconfont{
+					font-size:0.16rem;
+				}
+				.ms_num{
+					display:inline-block;
+					margin-right:0.1rem;
+				}
+				.click{
+					color:orange;
+				}
+			}
+		}
+	}
+	.msg_cont{
+		width:100%;
+		.msg_pic{
+			width:100%;
+			img{
+				width:100%;
+			}
+		}
+		figcaption{
+			padding:0.19rem 0.4rem 0.23rem 0.4rem; 
+			width:100%;
+			font-size:0.23rem;
+		}
+	}
+}

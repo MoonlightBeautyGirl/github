@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum=1,maximum=1">
+		<script>
+			var html = document.getElementsByTagName('html')[0];
+			var rem = document.documentElement.clientWidth/6.4 ;
+			html.style.fontSize = rem + 'px';
+			addEventListener('resize',function(){
+				var rem = document.documentElement.clientWidth/6.4 ;
+				html.style.fontSize = rem + 'px';
+			}) 
+		</script>
+		<title>微信小场景</title>
+		<link rel="stylesheet" href="css/Reset.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/all.css">
+	</head>
+	<body>
+		<div id="loading">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div>loading...</div>
+			<div>你的技能是否已经加满 整装待发。。</div>
+		</div>
+		<canvas id="cv"></canvas>
+		<div class="music" id="play">
+			<audio src="media/music.mp3" id="ad" autoplay="autoplay" loop="loop"></audio>
+			<img src="img/music.png" class="rolling" alt="">
+		</div>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide first">
+					<ul>
+						<li class="fadeInLeft left">曾经做为前端开发的你</li>
+						<li class="fadeInLeft left">解决PC兼容性而焦头烂额</li>
+						<li class="fadeInRight right">而今</li>
+						<li class="fadeInRight right">移动端H5应用疯狂来袭</li>
+						<li class="fadeInLeft  left">你是否已准备充分</li>
+						<li class="fadeInLeft left">学习新技能</li>
+						<li class="fadeInRight right">曾破茧成蝶、重获新生?</li>
+					</ul>
+				</div>
+				<div class="swiper-slide pic2">
+					<ul>
+						<li>
+							<img src="img/c1.png" alt="">
+						</li>
+						<li>
+							<img src="img/c2.png" alt="">
+						</li>
+						<li>
+							<img src="img/c3.png" alt="">
+						</li>
+						<li>
+							<img src="img/c4.png" alt="">
+						</li>
+						<li>
+							<img src="img/c5.png" alt="">
+						</li>
+						<li>
+							<img src="img/c6.png" alt="">
+						</li>
+					</ul>
+				</div>
+				<div class="swiper-slide pic3">
+					<div class="charpter"></div>
+				</div>
+				<div class="swiper-slide pic4">
+					<ul>
+						<li>transform  transition  rotate  scale  translate  keyframes animation  webkitTransitionEnd webkitAnimationIteration elapsedTime perspective…</li>
+						<li>drawImage lineWidth  strokeStyle  lineCap  globalCompositeOperation  moveTo   lineTo  stroke  arc  getImageData…</li>
+						<li>audio autoplay loop  paused  play  pause…</li>
+					</ul>
+				</div>
+				<div class="swiper-slide pic5">
+				</div>
+				<div class="swiper-slide pic6">
+				</div>
+				<div class="swiper-slide pic7">
+				</div>
+				<div class="swiper-slide pic8">
+				</div>
+			</div>
+		</div>
+		<div class="arrow"></div>
+	</body>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		var jq = $.noConflict();
+	</script>
+	
+	<script src="js/swiper.min.js"></script>
+	<script src="js/zepto.js"></script>
+	<script src="js/event.js"></script>
+	<script src="js/touch.js"></script>
+	<script src="js/fx.js"></script>
+	<script src="js/fx_methods.js"></script>
+	<script src="js/index.js"></script>
+	<script>
+		
+
+	</script>
+	
+</html>

@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0; }
+.search-bar{
+  display:none;
+  width: 6.4rem;
+  height: auto;
+  background: #f1f1f1;
+  .search{
+    width: 6.4rem;
+    height: 0.65rem;
+    border-bottom: 0.01rem solid #cdcdcd;
+    background: #fff;
+    input{
+      width: 5rem;
+      height: 0.46rem;
+      border: 0.01rem solid #ababab;
+      margin: 0.1rem 0 0 0.1rem;
+      float: left;
+      border-radius: 0.06rem;
+      font: 0.26rem/0.46rem "";
+      color: #cecece;
+      padding-left: 0.15rem;
+    }
+    .sousuo{
+      width: 0.91rem;
+      height: 0.46rem;
+      background: #0cc440;
+      border-radius: 0.06rem;
+      font: 0.26rem/0.46rem "";
+      color: #fff;
+      text-align: center;
+      margin: 0.1rem 0 0 0.1rem;
+      float: left;
+    }
+  }
+  .ren{
+    width: 6.4rem;
+    height: 8.35rem;
+    background: #fff;
+    margin-top: 0.1rem;
+    .username{
+      width: 6.4rem;
+      height: 1.35rem;
+      background: #fff;
+      border-bottom: 0.01rem solid #e5e5e5;
+      position: relative;
+      .guanzhu{
+        width: 0.75rem;
+        height: 0.35rem;
+        border-radius: 0.05rem;
+        background: #e5e5e5;
+        color: #fff;
+        font: 0.23rem/0.35rem "";
+        text-align: center;
+        position: absolute;
+        right:0.25rem;
+        top:0.32rem;
+      }
+      .weiguanzhu{
+        background: #0cc440;
+      }
+
+      .touxiang{
+        width: 0.95rem;
+        height: 0.95rem;
+        border: 0.01rem solid #adadad;
+        border-radius: 50%;
+        margin: 0.2rem 0 0 0.23rem;
+        float: left;
+        background: url(../img/07loginBox_03.jpg) no-repeat;
+        background-size: 0.95rem 0.95rem;
+      }
+      .wenzi{
+        width: 4.5rem;
+        height: 1.15rem;
+        margin-left: 0.2rem;
+        margin-top: 0.2rem;
+        float: left;
+        .name{
+          font: 0.3rem/0.5rem "";
+          color: #000;
+        }
+        .qianming{
+          font: 0.26rem/0.5rem "";
+          color: #999;
+        }
+      }
+    }
+  }
+}

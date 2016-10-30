@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test.jq</title>
+	<link rel="stylesheet" href="css/cssresets.css">
+	<link rel="stylesheet" href="font/iconfont.css">
+	<link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+<div class="vd-box">
+	<div class="mask hide">
+		<i class="iconfont">&#xe602;</i>
+	</div>
+	<video id="vd" src="media/c.mp4" ></video>
+	<div id="processbar">
+		<i id="prev" class="iconfont">&#xe601;</i>
+		<div id="played"></div>
+		<div id="loaded"></div>
+		<i id="next" class="iconfont">&#xe600;</i>
+		<div id="ball"></div>
+	</div>
+	<div class="controls">
+		<i class="iconfont" id="play">&#xe602;</i>
+		<i class="iconfont hide" id="pause">&#xe603;</i>
+		<div class="time">
+			<span id="nowTime">00:00</span>
+			<span id="allTime">00:00</span>
+		</div>
+		<i class="iconfont" id="allScreen">&#xe604;</i>
+		<i class="iconfont hide" id="smallScreen">&#xe607;</i>
+		<div id="voiceCtl">
+			<i class="iconfont " id="vcOpen">&#xe605;</i>
+			<i class="iconfont hide" id="vcClose">&#xe621;</i>
+			<!-- <input type="range" max="100" min="0" value="100" step="1" id="volume"> -->
+			<div id="vcPcs"></div>
+			<div id="vcBall"></div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/index.js"></script>
+</html>

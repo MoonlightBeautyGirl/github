@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum=1,maximum=1,user-scalable=no">
+	<title>qqmusic</title>
+	<link rel="stylesheet" href="css/Reset.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		var rem = document.documentElement.clientWidth/6.4;
+		document.getElementsByTagName("html")[0].style.fontSize = rem+"px";
+	</script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<header id="header">
+			<div class="h_left">
+				<i class="icon1"></i>
+			</div>
+			<div class="h_center">
+				玛卡瑞纳
+			</div>
+			<div class="h_right">
+				<i class="icon2"></i>
+			</div>
+		</header>
+		<section class="editor">
+			——   海龟先生   ——
+		</section>
+		<section class="sele">
+			<span>标准
+				<i class="icon1"></i>
+			</span>
+			<span>独家</span>
+			<span>MV</span>
+			<span>dts</span>
+		</section>
+		<section class="center"> 
+			<div class="photo">
+				<img src="img/40434642065338347.jpg" alt="">
+			</div>
+		</section>
+		<section class="rln">
+			曲：刘佳
+		</section>
+		<section class="player">
+			<audio id="ad" src="audio/海龟先生 - 玛卡瑞纳.mp3"></audio>
+			<span class="now">00:00</span>
+			<div id="processbar">
+				<div id="played"></div>
+				<div id="ball"></div>
+			</div> 
+			<span class="all">04:23</span>
+		</section>
+		<section class="ctl">
+			<div><i class="icon5"></i></div>
+			<div id="play">
+				<i class="icon6"></i>
+				<i class="icon8"></i>
+			</div>
+			<div><i class="icon7"></i></div>
+		</section>
+		<footer>
+			<div><i class="icon9"></i></div>
+			<div><i class="icon10"></i></div>
+			<div><i class="icon11"></i></div>
+			<div><i class="icon12"></i></div>
+			<div><i class="icon13"></i></div>
+		</footer>
+		<img src="img/40434642065338347.jpg" class="blur" alt="">
+	</div>
+</body>
+<script src="js/index.js"></script>
+</html>

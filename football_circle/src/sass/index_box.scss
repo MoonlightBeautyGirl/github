@@ -1,0 +1,105 @@
+div,span,figure,figcaption,img{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+$fb_w:3.15rem;
+@mixin bd_btm{
+	border:1px solid #e1e6e2;
+}
+@mixin imgs{
+	width:100%;
+	display:block;
+	border:0;
+}
+@mixin fb_css{
+	width:6.5rem;
+	height:100%;
+	margin-top:0.7rem;
+	overflow:hidden;
+}
+@mixin fb_l_cont{
+	width:$fb_w;
+	@include bd_btm;
+	margin-top:0.1rem;
+	.cont_img{
+		width:$fb_w;
+		@include bd_btm;
+		img{
+			@include imgs;
+		}
+	}
+	figcaption{
+		width:$fb_w;
+		padding:0.16rem 0.2rem 0.19rem 0.2rem;
+		font-size:0.24rem;
+		color:#000;
+		word-break:break-all;
+	}
+}
+
+.index-box{
+	.nav{
+		width:100%;
+		overflow:hidden;
+		font-size:0;
+		position:fixed;
+		left:0;
+		top:0.87rem;
+		background:rgba(255,255,255,0.9);
+		border-bottom: 1px solid #d9d9d9;
+		span{
+			display:inline-block;
+			height:0.6rem;
+			border-top:0.05rem solid rgba(255,255,255,0);
+			border-bottom:0.05rem solid rgba(255,255,255,0);
+			font-size:0.26rem;
+			line-height:0.6rem;
+			text-align:center;
+			width:33.33%;
+			color:#666666;		
+		}
+		.checked{
+			color:#0dc441;
+			border-bottom:0.05rem solid #0dc441;
+		}
+	}
+
+	.hotspot{
+		background:#fff;
+		overflow: hidden;
+		.fb-box{
+			overflow: hidden;
+			width:300%;
+			.item-box{
+				width:33.33%;
+				float:left;
+				overflow-x:hidden;
+			}
+			.fb-life{
+				@include fb_css;
+				.fb_l_cont{
+					float:left;
+					margin-right:0.1rem;
+					@include fb_l_cont;
+				}	
+			}
+			.fb-live{
+				@include fb_css;
+				.fb_l_cont{
+					float:left;
+					margin-right:0.1rem;
+					@include fb_l_cont;
+				}
+			}
+			.fb-girl{
+				@include fb_css;
+				.fb_l_cont{
+					float:left;
+					margin-right:0.1rem;
+					@include fb_l_cont;
+				}
+			}
+		}	
+	}
+}
