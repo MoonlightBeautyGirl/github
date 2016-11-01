@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <style>
+        	#output{
+        		width:300px;
+        		height:500px;
+        		border:1px solid red;
+        		word-break: break-all;
+        		font-size: 20px;
+        	}
+        </style>
+        <title>Blank App</title>
+    </head>
+    <body>
+    	<label for="ipt1">关键字</label>
+    	<input type="text" placeholder="请输入关键字" id="ipt1">
+		<input type="button" value="点击开始查找" id="btn1"><br>
+		<label for="ipt2">姓</label>
+		<input type="text" id="ipt2"><br>
+		<label for="ipt3">名</label>
+		<input type="text" id="ipt3"><br>
+		<label for="ipt4">工作号码</label>
+		<input type="tel" id="ipt4"><br>
+		<label for="ipt5">家庭号码</label>
+		<input type="tel" id="ipt5"><br>
+		<label for="ipt6">移动号码</label>
+		<input type="tel" id="ipt6"><br>
+		<input type="button" value="点击新建联系人" id="btn2">
+		<div id="output"></div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script>
+        	document.addEventListener('deviceready',function(){
+        		document.getElementById('btn1').addEventListener('touchend',function(){
+        			function onSuccess(contacts) {
+					    alert('Found ' + contacts.length + ' contacts.');
+					    document.getElementById('output').innerHTML = JSON.stringify(contacts);
+					};
+
+					function onError(contactError) {
+					    alert('onError!');
+					};
+
+					// find all contacts with 'Bob' in any name field
+					var options      = new ContactFindOptions();
+					options.filter   = document.getElementById('ipt1').value;
+					options.multiple = true;
+					options.desiredFields = [navigator.contacts.fieldType.id];
+					options.hasPhoneNumber = true;
+					var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+					navigator.contacts.find(fields, onSuccess, onError, options);
+        		},false)
+        		document.getElementById('btn2').addEventListener('touchend',function(){
+        			function onSuccess(contact) {
+					    alert("Save Success");
+					};
+
+					function onError(contactError) {
+					    alert("Error = " + contactError.code);
+					};
+
+					// create a new contact object
+					var contact = navigator.contacts.create();
+					contact.displayName = document.getElementById('ipt2').value + document.getElementById('ipt3').value;
+					contact.nickname = document.getElementById('ipt2').value + document.getElementById('ipt3').value;            // specify both to support all devices
+
+					// populate some fields
+					var name = new ContactName();
+					name.givenName = document.getElementById('ipt3').value;
+					name.familyName = document.getElementById('ipt2').value;
+					contact.name = name;
+					var phoneNumbers = [];
+
+					phoneNumbers[0] = new ContactField('home', document.getElementById('ipt4').value, false);
+					phoneNumbers[1] = new ContactField('work', document.getElementById('ipt5').value, true); // preferred number
+					phoneNumbers[2] = new ContactField('mobile', document.getElementById('ipt6').value, false);
+
+					contact.phoneNumbers = phoneNumbers;
+					// save to device
+					contact.save(onSuccess,onError);
+        		},false)
+        	},false)
+        </script>
+    </body>
+</html>

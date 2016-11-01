@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <style>
+        	#output{
+        		width: 300px;
+        		height:500px;
+        		border:1px solid red;
+        		font-size: 20px;
+        	}
+        </style>
+        <title>Blank App</title>
+    </head>
+    <body>
+    	<input type="button" id="btn" value="获取传感器参数">
+    	<input type="button" id="btn2" value="开始监测">
+    	<input type="button" id="btn3" value="结束监测">
+    	<div id="output"></div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script>
+        	document.addEventListener('deviceready',function(){
+        		document.getElementById('btn').addEventListener('touchend',function(){
+        			function onSuccess(acceleration) {
+					    document.getElementById('output').innerHTML = 
+					    	'Acceleration X: ' + acceleration.x + '\n' +
+					        'Acceleration Y: ' + acceleration.y + '\n' +
+					        'Acceleration Z: ' + acceleration.z + '\n' +
+					        'Timestamp: '      + acceleration.timestamp + '\n';
+					}
+
+					function onError() {
+					    alert('onError!');
+					}
+					navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+        		},false)
+        		document.getElementById('btn2').addEventListener('touchend',function(){
+        			function onSuccess(acceleration) {
+					     document.getElementById('output').innerHTML = 
+					    	'Acceleration X: ' + acceleration.x + '\n' +
+					        'Acceleration Y: ' + acceleration.y + '\n' +
+					        'Acceleration Z: ' + acceleration.z + '\n' +
+					        'Timestamp: '      + acceleration.timestamp + '\n';
+					}
+
+					function onError() {
+					    alert('onError!');
+					}
+
+					var options = { frequency: 100 };  // Update every 3 seconds
+
+					var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+        		},false);
+        		document.getElementById('btn3').addEventListener('touchend',function(){
+        			navigator.accelerometer.clearWatch(watchID);
+        		},false)
+        	},false)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <style>
+        	#output{
+        		width: 300px;
+        		height:500px;
+        		font-size: 20px;
+        		border:1px solid red;
+        	}
+        </style>
+        <title>基础信息查询</title>
+    </head>
+    <body>
+    	<input type="button" id="btn" value="点击获取手机基础信息">
+    	<div id="output"></div>
+    	<input type="button" id="btn2" value="Alert">
+    	<input type="button" id="btn3" value="Confirm">
+    	<input type="button" id="btn4" value="beep">
+    	<input type="button" id="btn5" value="Vibrate">
+        <script type="text/javascript" src="cordova.js"></script>
+        <script>
+        	document.addEventListener('deviceready',function(){
+        		document.getElementById('btn').addEventListener('touchend',function(){
+        			document.getElementById('output').innerHTML = 
+        			'device.cordova:' + device.cordova +
+        			'\n device.model:' + device.model + 
+        			'\n device.platform:' + device.platform + 
+        			'\n device.uuid:' + device.uuid +
+        			'\n device.version:' + device.version + 
+        			'\n device.manufacturer: ' + device.manufacturer + 
+        			'\n device.isVirtual:' + device.isVirtual +
+        			'\n device.serial:' + device.serial;
+        		},false)
+        		document.getElementById('btn2').addEventListener('touchend',function(){
+        			function alertDismissed() {
+					    // do something
+					   alert('继续赢取白富美');
+					}
+
+					navigator.notification.alert(
+					    '你已经走上人生巅峰!',  // message
+					    alertDismissed,         // callback
+					    '游戏结束',            // title
+					    '好哒'                  // buttonName
+					);
+        		},false)
+        		document.getElementById('btn3').addEventListener('touchend',function(){
+        			function onConfirm(buttonIndex) {//index值从1开始；
+					    alert('You selected button ' + buttonIndex);
+					}
+
+					navigator.notification.confirm(
+					    '你已经走上人生巅峰', // message
+					     onConfirm,            // callback to invoke with index of button pressed
+					    '游戏结束',           // title
+					    ['再来一遍','滚蛋！']     // buttonLabels
+					);
+        		},false);
+        		document.getElementById('btn4').addEventListener('touchend',function(){
+        			navigator.notification.beep(2); //beep()中的参数表示响铃次数；
+        		},false)
+        		document.getElementById('btn5').addEventListener('touchend',function(){
+        			navigator.vibrate(1000);//vibrate()中的参数表示震动的毫秒数；
+        		})
+        	},false)
+        </script>
+    </body>
+</html>

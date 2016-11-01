@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <style>
+        	#output{
+        		width:300px;
+        		height:500px;
+        		border:1px solid red;
+        		font-size: 20px;
+        	}
+        </style>
+        <title>指南针</title>
+    </head>
+    <body>
+    	<input type="button" value="获取当前值" id="btn1">
+    	<input type="button" value="开始监测" id="btn2">
+    	<input type="button" value="结束监测" id="btn3">
+		<div id="output"></div>
+        <script type="text/javascript" src="cordova.js"></script>
+    	<script>
+    		document.addEventListener('deviceready',function(){
+    			document.getElementById('btn1').addEventListener('touchend',function(){
+    				function onSuccess(heading) {
+					   document.getElementById('output').innerHTML = 'Heading: ' + heading.magneticHeading;
+					};
+
+					function onError(error) {
+					    alert('CompassError: ' + error.code);
+					};
+
+					navigator.compass.getCurrentHeading(onSuccess, onError);
+    			})
+    		document.getElementById('btn2').addEventListener('touchend',function(){
+    			function onSuccess(heading) {
+				    var element = document.getElementById('output');
+				    element.innerHTML = 'Heading: ' + heading.magneticHeading;
+				};
+
+				function onError(compassError) {
+				    alert('Compass error: ' + compassError.code);
+				};
+
+				var options = {
+				    frequency: 100
+				}; // Update every 3 seconds
+
+				var watchID = navigator.compass.watchHeading(onSuccess, onError, options);	
+    		},false);
+    		document.getElementById('btn3').addEventListener('touchend',function(){
+    			navigator.compass.clearWatch(watchID);
+    		})
+    	})
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <style>
+        	#btn{
+        		width:80px;
+        		height:30px;
+        		font-size: 20px;
+        		line-height: 20px;
+        		background: pink;
+        		color:yellow;
+        	}
+        	#output{
+        		width:300px;
+        		height:300px;
+        		border:1px solid red;
+        	}
+        </style>
+        <title>照相机示例</title>
+    </head>
+    <body>
+    	<button type="button" id="btn">拍照</button>
+        <div id="output">
+        	<img src="" id="myImage" alt="">
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+		<script>
+			document.addEventListener('deviceready',function(){
+				document.getElementById('btn').addEventListener('touchend',function(){
+					var option = { 
+						quality: 50,
+						destinationType: Camera.DestinationType.FILE_URI,
+						// sourceType : Camera.PictureSourceType.CAMERA,
+						sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
+						targetWidth: 100,
+						targetHeight: 100
+					};
+					navigator.camera.getPicture( onSuccess, onFail, option );
+					// base64形式返回数据
+					// function onSuccess(imageData) {
+					//     var image = document.getElementById('myImage');
+					//     image.src = "data:image/jpeg;base64," + imageData;
+					// }
+					function onSuccess(imageURI) {
+						var image = document.getElementById('myImage');
+						image.src = imageURI;
+					}
+					function onFail(message) {
+					   alert('Failed because: ' + message);
+					}
+				},false);
+			},false);
+			
+		</script>
+    </body>
+</html>
