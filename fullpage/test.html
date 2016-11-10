@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px;">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script>
+		var html = document.getElementsByTagName('html')[0];
+		var rem = document.documentElement.clientWidth/10.8;
+		html.style.fontSize = rem  +'px';
+		addEventListener('resize',function(){
+		var rem = document.documentElement.clientWidth/10.8;
+		html.style.fontSize = rem  +'px';
+		})
+	</script>
+	<meta charset="UTF-8">
+	<title>fullpage_test</title>
+	<link rel="stylesheet" href="css/Reset.css">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/fullPage.js/2.8.8/jquery.fullPage.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="http://cdn.bootcss.com/fullPage.js/2.8.8/vendors/jquery.easings.min.js"></script>
+	<script src="http://cdn.bootcss.com/fullPage.js/2.8.8/vendors/scrolloverflow.js"></script>
+	<script src="http://cdn.bootcss.com/fullPage.js/2.8.8/jquery.fullPage.js"></script>
+</head>
+<body>
+	<div id="fullPage">
+		<div class="section sct1">
+		</div>
+		<div class="section sct2">
+		</div>
+		<div class="section sct3">
+		</div>
+		<div class="section sct4">
+			<div class="slide sld1">
+			</div>
+			<div class="slide sld2">
+			</div>
+			<div class="slide sld3">
+			</div>
+			<div class="slide sld4">
+			</div>
+		</div>
+		<div class="section sct5">
+		</div>
+		<div class="section sct6">
+		</div>
+		<div class="section sct7">
+		</div>
+	</div>
+</body>
+<script src="js/index.js"></script>
+</html>

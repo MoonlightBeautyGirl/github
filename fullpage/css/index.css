@@ -1,0 +1,63 @@
+html,body,div{
+	margin:0;
+	padding:0;
+}
+html,body{
+	width:100%;
+	height:100%;
+}
+.section{
+	position: relative;
+}
+p{
+	font-size: 0.2rem;
+}
+.sct1{
+	background: url(../img/185421171571780795.jpg) no-repeat;
+	background-size:cover;
+	overflow: hidden;
+}
+.sct1 .sct1-p{
+	color:pink;
+	text-align: center;
+	font-size:1rem;
+	/*position:absolute;
+	top:3rem;*/
+	margin-top:3rem;
+}
+.sct2{
+	background: url(../img/18862800212927266.jpg) no-repeat;
+	background-size:cover;
+}
+.sct3{
+	background: url(../img/211324583877723002.jpg) no-repeat;
+	background-size:cover;
+}
+.sct4 .sld1{
+	background: url(../img/242375432038646575.jpg) no-repeat;
+	background-size:cover;
+}
+.sct4 .sld2{
+	background: url(../img/699533734009659766.jpg) no-repeat;
+	background-size:cover;
+}
+.sct4 .sld3{
+	background: url(../img/761101470150296881.jpg) no-repeat;
+	background-size:cover;
+}
+.sct4 .sld4{
+	background: url(../img/777334801780418169.jpg) no-repeat;
+	background-size:cover;
+}
+.sct5{
+	background: url(../img/437381695116371913.jpg) no-repeat;
+	background-size:cover;
+}
+.sct6{
+	background: url(../img/502742307708402599.jpg) no-repeat;
+	background-size:cover;
+}
+.sct7{
+	background: url(../img/523431500095959392.jpg) no-repeat;
+	background-size:cover;
+}
