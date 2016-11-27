@@ -1,0 +1,100 @@
+html,body,div{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+#wrapper{
+	overflow:hidden;
+	position:relative;
+}
+#mask{
+	width:600px;
+	height:600px;
+	position:absolute;
+	left:50px;
+	top:50px;
+}
+#box{
+	width:600px;
+	height:600px;
+	background: url(../img/chessboard.png) no-repeat 14px 14px;
+	background-size: 570px 570px;
+	float:left;
+	margin:50px;
+	box-shadow: 1px 2px 10px #888;
+}
+#box div{
+	width:40px;
+	height:40px;
+	float:left;
+	cursor:pointer;
+}
+.chess-topleft:hover{
+	background:url(../img/hover_up_left.png) no-repeat;
+	background-size:cover;
+}
+.chess-top:hover{
+	background: url(../img/hover_up.png) no-repeat;
+	background-size: cover;
+}
+.chess-topright:hover{
+	background: url(../img/hover_up_right.png) no-repeat;
+	background-size: cover;
+}
+.chess-left:hover{
+	background:url(../img/hover_left.png) no-repeat;
+	background-size: cover;
+}
+.chess-middle:hover{
+	background: url(../img/hover.png) no-repeat;
+	background-size: cover;
+}
+.chess-right:hover{
+	background:url(../img/hover_right.png) no-repeat;
+	background-size: cover;
+}
+.chess-bottom:hover{
+	 background: url(../img/hover_down.png) no-repeat;
+	 background-size: cover;
+}
+.chess-bottomleft:hover{
+	background: url(../img/hover_down_left.png) no-repeat;
+	background-size: cover;
+}
+.chess-bottomright:hover{
+	background: url(../img/hover_down_right.png) no-repeat;
+	background-size: cover;
+}
+.controller{
+	float:left;
+	overflow:hidden;
+	width:200px;
+	padding-top:50px;
+	position:relative;
+}
+.controller div{
+	width:70px;
+	height:30px;
+	line-height:30px;
+	background:#3e9;
+	text-align: center;
+	font-size: 20px;
+	float:left;
+	margin:15px;
+	cursor:pointer;
+	font-weight:bold;
+}
+.controller div:hover{
+	background:#3e3;
+	color:#aaa;
+}
+.controller .default{
+	border:3px solid orange;
+}
+.controller #restartBtn{
+	left:0;
+	top:50px;
+}
+.hide{
+	display:none;
+}
