@@ -1,64 +1,114 @@
-//获取元素；
-var box = document.getElementById('box');
-var chessBox = box.getElementsByTagName('div');
-var start = document.getElementById('startBtn');
-var restart = document.getElementById('restartBtn');
-var mask = document.getElementById('mask');
+//判断;
+	checkHtml5();
 
-//初始化数据；
-var isWhite = true;
-var isWell = false;
+	var btn = document.getElementById('startBtn');
+	var mask = document.getElementById('mask');
+	var chessBoard = document.getElementById('chessBoard');
+	var box = document.getElementById('chessbox');
+	var chessBox = chessBoard.getElementsByTagName('div');
+	var chess = document.getElementById('chess');
+	var isWhite = true;
+	var isWell = false;
 
-//棋盘信息，0为没有走的，1为白棋走的，2为黑棋走的
-var chessData = new Array(15);for (var x = 0; x < 15; x++) {
-    chessData[x] = new Array(15);
-    for (var y = 0; y < 15; y++) {
-        chessData[x][y] = 0;
-    }
-}
-
-//监听点击事件；
-box.addEventListener('click',function(e){
-	//点击时获取点击的div位置；
-	var x = Math.floor((e.clientX-50)/40);
-	var y = Math.floor((e.clientY-50)/40);
-
-	//判断该位置是否已有棋子；
-	if(chessData[x][y] != 0){
-		alert('不可以在重复位置落子');
-		return;
-	}
-	//判断是否应该落白子；
-	if(isWhite){
-		isWhite = false;
-		//执行落子函数；
-		playChess(1,x,y);
-	}else{
-		isWhite = true;
-		playChess(2,x,y);
-	}	
-})
-
-//落子函数；
-function playChess(chess,x,y){
-	//判断是否游戏结束；
-	if(isWell == true){
-		var b = window.confirm('游戏结束，是否重新开始');
-		if(b){
-			window.location.reload();
+	//开始与重玩；
+	var isStart = true;
+	btn.onclick = function(){
+		if(isStart){
+			this.innerText = '重玩';
+			mask.className = 'hide';
+			chess.className = '';
+			isStart = false;
+			return;
 		}else{
+			this.innerText = '开始';
+			mask.className = '';
+			window.location.reload();
+			isStart = true;
+			return;
+		}	
+	}
+
+	//初始化数据数组；0为未下棋；1为白棋；2为黑棋；
+	var chessData = new Array(15);
+	for(var x = 0; x < 15; x ++){
+		chessData[x] = new Array(15);
+		for (var y = 0; y < 15 ; y++){
+			chessData[x][y] = 0;
+		}
+	}	
+
+	//判断是否支持canvas；
+	var cvs;
+	function checkHtml5() {    
+		if (typeof(Worker) !== "undefined") {
+			return cvs = true;
+		}else{
+			return cvs = false;
+		} 
+	}  
+	
+	if(cvs){
+		var isWhite = true;
+		var isWell = false;
+		var img_w = new Image();
+		img_w.src = "img/white.png";
+		var img_b = new Image();
+		img_b.src = "img/black.png";
+
+		//绘制棋盘；
+		var chess = document.getElementById('chess');
+		var context = chess.getContext('2d');
+		var backimage = new Image();
+		backimage.src = 'img/chessboard.png';
+		backimage.onload = function(){
+			context.drawImage(backimage,10,10,513,513);
+		}
+	}
+
+	box.onclick =function(event){
+		var e = event || window.event;
+		var x = Math.floor((e.clientX-45)/36);
+		var y = Math.floor((e.clientY-45)/36);
+
+		if (chessData[x][y] != 0) {//判断该位置是否被下过了
+			alert("你不能在这个位置下棋");
 			return;
 		}
-		return;
+
+		if (isWhite) {
+			isWhite = false;
+			drawChess(1, x, y);
+		}
+		else {
+			isWhite = true;
+			drawChess(2, x, y);
+		}
 	}
-	//在点击的div上设置背景图片；
-	if(x >= 0 && x <= 15 && y >=0 && y <= 15){
+	function drawChess(chess, x, y) {//参数为，棋（1为白棋，2为黑棋），数组位置
+		if (isWell == true) {
+			var b = window.confirm('游戏结束，是否重新开始');
+			if(b){
+				window.location.reload();
+			}
+			return;
+		}
+		if(x >= 0 && x <= 15 && y >=0 && y <= 15){
 		var num = y*15 + x;
 		if(chess == 1){
-			chessBox[num].style.cssText = 'background:url(../img/white.png) no-repeat;background-size:cover;';
+			if(cvs){
+				context.drawImage(img_w, x * 36 , y * 36  );//绘制白棋
+			}else{
+				console.log(chessBox[num]);
+				chessBox[num].className = 'chesswhite'
+			}
 			chessData[x][y] = 1;
 		}else{
-			chessBox[num].style.cssText = 'background:url(../img/black.png) no-repeat;background-size:cover;';
+			if(cvs){
+				 context.drawImage(img_b, x * 36 , y * 36  );
+			}else{
+				chessBox[num].className = 'chessblack';
+			}
+			
 			chessData[x][y] = 2;
 		}
 		winJudge(x,y,chess);
@@ -79,13 +129,15 @@ function winJudge(x,y,chess){
 		}
 		cnt1 ++;
 	}
+	
 	for (var i = x + 1 ; i < 15 ; i++){
 		if(chessData[i][y] != chess){
 			break;
 		}
 		cnt1 ++;
-
 	}
+
+	
 	//cnt2;上下判断；、
 	for (var i = y ; i >= 0 ; i--){
 		if(chessData[x][i] != chess){
@@ -93,37 +145,49 @@ function winJudge(x,y,chess){
 		}
 		cnt2 ++;
 	}
-	for(var i = y + 1  ; i <= 15 ; i++){
+	for(var i = y + 1  ; i < 15 ; i++){
 		if(chessData[x][i] != chess){
 			break;
 		}
 		cnt2 ++;
 	}
 	//cnt3;左上右下判断；
-	for(var i = x , j = y ; i >=0 , j >= 0 ; i-- , j--){
-		if(chessData[i][j] != chess){
-			break;
+	for(var i = x , j = y ; i > 0 , j > 0 ; j-- , i--){
+		if(i > 0 && j > 0){
+			if(chessData[i][j] == chess){
+				break;
+			}
+			cnt3 ++;
 		}
-		cnt3 ++;
 	}
-	for(var i = x + 1  , j = y + 1  ; i <= 15 , j <= 15 ; i++ , j++){
-		if(chessData[i][j] != chess){
-			break;
+		
+	
+	for(var i = x + 1  , j = y + 1  ; i < 15 , j < 15 ; i++ , j++){
+		if (i < 15 && j < 15) {
+			if(chessData[i][j] != chess){
+				break;
+			}
+			cnt3 ++;
 		}
-		cnt3 ++;
+		
 	}
 	//cnt4;左下右上判断；
-	 for (var i = x , j = y ; i >= 0 , j < 15 ; i-- , j++) {
-        if (chessData[i][j] != chess) {
-            break;
-        }
-        cnt4++;
+	 for (var i = x , j = y ; i >= 0 , j <= 15 ; i-- , j++) {
+	 	if(i >= 0 && j<= 15){
+			if (chessData[i][j] != chess) {
+	            break;
+	        }
+	        cnt4++;
+	 	}
     }
-    for (var i = x + 1 , j = y - 1 ; i < 15 , j >= 0 ; i++ , j--) {
-        if (chessData[i][j] != chess) {
-            break;
-        }
-        cnt4++;
+    for (var i = x + 1 , j = y + 1 ; i < 15 , j >= 0 ; i++ , j--) {
+    	if(i < 15 && j >=0 ){
+    		if (chessData[i][j] != chess) {
+           		break;
+	        }
+	        cnt4++;    
+    	}
+    	
     }
 	//判断输赢；
 	if(cnt1 >= 5 || cnt2 >= 5 || cnt3 >= 5 || cnt4 >= 5){
@@ -135,19 +199,4 @@ function winJudge(x,y,chess){
 		//判断游戏结束；
 		isWell = true;
 	}
-}
-
-//开始游戏；
-start.onclick = function(){
-	this.className = 'hide';
-	restart.className = '';
-	mask.className = 'hide';
-
-}
-//重玩；
-restart.onclick = function(){
-	this.className = 'hide';
-	start.className = '';
-	mask.className = '';
-	window.location.reload();
 }

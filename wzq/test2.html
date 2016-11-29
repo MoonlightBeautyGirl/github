@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>五子棋</title>
+	<link rel="stylesheet" type="text/css" href="css/Reset.css">
+	<link rel="stylesheet" type="text/css" href="css/test1.css">
+</head>
+<body>
+	<div id="chessbox">
+		<div id="mask"></div>
+		<canvas id="chess" width="540px" height="540px" class="hide">
+			<div id="chessBoard">
+				<!-- 最顶行 -->
+				<div class="chess-topleft"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-top"></div>
+				<div class="chess-topright"></div>
+				<!-- 第一行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第二行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第三行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第四行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第五行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第六行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第七行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第八行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第九行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第十行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第十一行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第十二行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第十三行 -->
+				<div class="chess-left"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-middle"></div>
+				<div class="chess-right"></div>
+				<!-- 第十四行 -->
+				<div class="chess-bottomleft"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottom"></div>
+				<div class="chess-bottomright"></div>
+			</div>
+		</canvas>
+	</div>
+	<button type="button" id="startBtn">开始</button>
+</body>
+<script src="js/test1.js"></script>
+<script>
+	
+
+</script>
+</html>
